@@ -23,5 +23,6 @@ public class AdminProductController {
     public String deleteproduct(@PathVariable Long id) {
          adminProductServices.deleteproducts(id);
          return  "delete product successfully";
+         //a
     }
 }
