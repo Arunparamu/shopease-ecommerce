@@ -5,6 +5,8 @@ import com.example.ecommerces.Repository.AdminProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AdminProductServices {
 
@@ -17,5 +19,9 @@ public class AdminProductServices {
 
     public void deleteproducts(Long id) {
         adminProductRepository.deleteById(id);
+    }
+
+    public List<AdminProductEntity> getAllProduct() {
+        return adminProductRepository.findAll();
     }
 }

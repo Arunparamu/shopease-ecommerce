@@ -6,6 +6,8 @@ import com.example.ecommerces.Services.AdminProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin")
 public class AdminProductController {
@@ -23,5 +25,10 @@ public class AdminProductController {
     public String deleteproduct(@PathVariable Long id) {
          adminProductServices.deleteproducts(id);
          return  "delete product successfully";
+    }
+
+    @GetMapping("/viewproduct")
+    public List<AdminProductEntity> getAllProduct() {
+         return adminProductServices.getAllProduct();
     }
 }
