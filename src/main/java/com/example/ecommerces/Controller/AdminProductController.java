@@ -17,6 +17,7 @@ public class AdminProductController {
 
     @PostMapping("/addproduct")
     public String addproduct(@RequestBody AdminProductEntity adminProductEntity) {
+        System.out.println(adminProductEntity.getProductName()+" "+adminProductEntity.getProductPrice());
         adminProductServices.addproducts(adminProductEntity);
         return  "add product successfully";
     }

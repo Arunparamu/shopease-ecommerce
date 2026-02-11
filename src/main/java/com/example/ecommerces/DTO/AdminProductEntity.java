@@ -1,5 +1,6 @@
 package com.example.ecommerces.DTO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,16 +11,16 @@ public class AdminProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "product_name")
+    @JsonProperty("product_name")
     private String productName;
 
-    @Column(name = "product_price")
+    @JsonProperty("product_price")
     private int productPrice;
 
-    @Column(name = "product_stock")
+    @JsonProperty("product_stock")
     private int productStock;
 
-    @Column(name = "product_category")
+    @JsonProperty("product_category")
     private String productCategory;
 
     // ----- Getters & Setters -----

@@ -14,6 +14,7 @@ public class AdminProductServices {
     private AdminProductRepository adminProductRepository;
 
     public void addproducts(AdminProductEntity adminProductEntity) {
+       // System.out.println(adminProductEntity.getProductName()+" "+adminProductEntity.getProductPrice());
         adminProductRepository.save(adminProductEntity);
     }
 
