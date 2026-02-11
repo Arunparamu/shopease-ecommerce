@@ -21,7 +21,7 @@ public class ProductServices {
     public List<AdminProductEntity> findAllfilter(String productName,String productCategory) {
         if(productName!=null && productCategory!=null)
         {
-            return productRepository.findByProductNameAndProductCategory(productName,productCategory);
+            return productRepository.findByProductNameIn(productName,productCategory);
         }
         else {
             return productRepository.findAll();

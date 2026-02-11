@@ -9,7 +9,7 @@ public interface ProductRepository extends JpaRepository<AdminProductEntity,Long
 
     List<AdminProductEntity> findByProductName(String productName);
 
-    List<AdminProductEntity> findByProductNameAndProductCategory(String productName,String productCategory);
+    List<AdminProductEntity> findByProductCategoryIn(String productName,String productCategory);
 
     List<AdminProductEntity> findByProductNameContainingIgnoreCase(String productName);
 }
