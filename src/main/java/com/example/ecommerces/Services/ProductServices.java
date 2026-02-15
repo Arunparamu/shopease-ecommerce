@@ -18,10 +18,10 @@ public class ProductServices {
         return productRepository.findAll();
     }
 
-    public List<AdminProductEntity> findAllfilter(String productName,String productCategory) {
-        if(productName!=null && productCategory!=null)
+    public List<AdminProductEntity> findAllfilter(int minPrice,int  maxPrice) {
+        if(minPrice<maxPrice && minPrice>0)
         {
-            return productRepository.findByProductNameIn(productName,productCategory);
+            return productRepository.findByProductPriceBetween(minPrice,maxPrice);
         }
         else {
             return productRepository.findAll();

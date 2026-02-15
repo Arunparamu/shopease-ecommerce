@@ -22,8 +22,8 @@ public class ProductController {
     }
 
     @GetMapping("/fliter")
-    public List<AdminProductEntity> findAllfliter(@RequestParam(required = false) String productName,@RequestParam(required = false) String productCategory) {
-        return productServices.findAllfilter(productName,productCategory);
+    public List<AdminProductEntity> findAllfliter(@RequestParam(required = false) int minPrice,@RequestParam(required = false) int maxPrice) {
+        return productServices.findAllfilter(minPrice,maxPrice);
     }
 
     @GetMapping("/search")
